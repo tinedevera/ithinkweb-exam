@@ -28,4 +28,3 @@ A product needs to have the following information:
 
 ## Optional (for bonus points)
 - Say for example, we need a feature where we can display featured products. How would you go about implementing this feature? (You don't need to write code for this, just describe how would you implement it)
-"# ithinkweb-exam" 
