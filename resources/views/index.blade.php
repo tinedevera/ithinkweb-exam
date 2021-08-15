@@ -25,17 +25,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>test product</td>
-                    <td>test description</td>
-                    <td>test price</td>
-                    <td>test created</td>
-                    <td>test updated</td>
-                    <td>
-                        <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                    </td>
-                </tr>       
+                @foreach ($products as $product)
+                    <tr>
+                        <td>{{ $product->name }}</td>
+                        <td>{{ $product->description }}</td>
+                        <td>{{ $product->price }}</td>
+                        <td>{{ $product->created_at }}</td>
+                        <td>{{ $product->updated_at }}</td>
+                        <td>
+                            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                        </td>
+                    </tr>
+                @endforeach   
             </tbody>
-        </table>    
+        </table>
+        <div class="d-flex justify-content-center">
+            {!! $products->links() !!}
+        </div>
     </div>
 @endsection         
