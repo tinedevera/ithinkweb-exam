@@ -29,4 +29,4 @@ A product needs to have the following information:
 ## Optional (for bonus points)
 - Say for example, we need a feature where we can display featured products. How would you go about implementing this feature? (You don't need to write code for this, just describe how would you implement it)
 
-- I will implement this feature by adding a column (feature) on products table that has a boolean data type which can be updated by admin users through edit product page.
+Answer: I will implement this feature by adding a column (feature) on products table that has a boolean data type which can be updated by admin users through edit product page. Products that are featured will be prioritized in the least and will also be highlighted.
