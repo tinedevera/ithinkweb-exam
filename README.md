@@ -18,7 +18,7 @@ A product needs to have the following information:
 - Create a new MySQL database named `backend_coding_test`
 - Copy the `.env.example` file to a new file called `.env`
 - Fill out the corresponding database values in the `.env` file
-- Run `php artisan migrate` in the project root
+- Run `php artisan migrate` and `php artisan db:seed` in the project root
 
 ## Requirements
 - The product name should have a maximum of 255 characters, and the product price should be numeric that accepts up to two decimal places.
