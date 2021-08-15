@@ -18,3 +18,4 @@ Route::get('/', [ProductController::class, 'index']);
 
 Route::get('/add-product', [ProductController::class, 'create']);
 Route::post('/product', [ProductController::class, 'store']);
+Route::get('/show-product/{id}', [ProductController::class, 'show']);

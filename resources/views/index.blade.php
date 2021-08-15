@@ -4,7 +4,7 @@
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><h2><b>Product Details</b></h2></div>
+                    <div class="col-sm-8"><h2><b>Products</b></h2></div>
                         <div class="col-sm-4">
                         <a href="/add-product" class="btn btn-primary pull-right">
                             Add Product
@@ -33,7 +33,7 @@
                         <td>{{ $product->created_at }}</td>
                         <td>{{ $product->updated_at }}</td>
                         <td>
-                            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                            <a href="/show-product/{{ $product->id }}" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
                         </td>
                     </tr>
                 @endforeach   
