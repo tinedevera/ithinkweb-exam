@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -33,29 +34,26 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'product_name' => 'required|max:255',
+            'product_name' => 'required|max:255|alpha_num',
             'product_price' => 'required|numeric|regex:/^\d+\.\d{0,2}$/',
         ]);
 
         if ($validator->fails()) {
-            return redirect('/add')
+            return redirect('/add-product')
                         ->withErrors($validator)
                         ->withInput();
         } else {
 
              $product = Product::create([
-                'name' => auth()->user()->id,
-                'description' => $request->get('title'),
-                'price' => $request->get('isFinished'),
-                'created_at' => \Carbon\Carbon::now(),
-                'updated_at' => \Carbon\Carbon::now()
+                'name' => $request->get('product_name'),
+                'description' => $request->get('product_description'),
+                'price' => $request->get('product_price'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]);
         }
         
-        return response()->json([
-            'message' => 'Successfully created todo',
-            'code' => 1
-        ]);
+        return redirect('/');
     }
 
     /**
